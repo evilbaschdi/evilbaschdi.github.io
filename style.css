@@ -1,0 +1,400 @@
+@font-face {
+  font-family: "Rosario";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Rosario Regular"), local("Rosario-Regular"), url("http://fonts.gstatic.com/s/rosario/v10/w-TkvmAJln05SsRcUypbwA.woff") format("woff");
+}
+
+@-moz-viewport
+{
+    width: device-width;
+}
+
+@-ms-viewport
+{
+    width: device-width;
+}
+
+@-webkit-viewport
+{
+    width: device-width;
+}
+
+@viewport
+{
+    width: device-width;
+}
+
+html, body, div, h1, p, a, em, font, small, strong
+{
+    border: 0;
+    font-family: Rosario;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html
+{
+    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    margin-top: 32px !important;
+    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+}
+
+* html body
+{
+    margin-top: 32px !important;
+}
+
+body,
+#main
+{
+    background: #ffffff;
+}
+
+*
+{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body
+{
+    color: #ffffff;
+    font-family: Rosario;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+h1
+{
+    clear: both;
+    color: #ffffff;
+    font-family: Rosario;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 1.25em 0 0.5em;
+}
+
+small
+{
+    font-size: 75%;
+}
+
+big
+{
+    font-size: 125%;
+}
+
+a:visited
+{
+    color: #757575;
+}
+
+a:hover,
+a:focus,
+a:active
+{
+    color: #111;
+}
+
+.alignleft
+{
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright
+{
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter
+{
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+#masthead,
+#commentform #submit,
+.comment-reply-link,
+.wpcf7 input[type="submit"],
+.protected-post-form input[type="submit"],
+.page-numbers.current,
+.page-links > span,
+#main #content .woocommerce-pagination .current,
+#main .more-link,
+#main .more-link:hover
+{
+    background: #242424;
+    background-size: 100% auto;
+    background-image: url("http://evilbaschdi.bplaced.net/blog/wp-content/uploads/2014/04/cropped-cropped-me2.png");
+    color: #fff !important;
+    text-align: center;
+}
+
+#main #primary a:visited
+{
+    color: #757575;
+}
+
+#main #primary a:hover,
+#main .widget a:hover
+{
+    color: #222;
+}
+
+.entry-meta,
+.entry-aside,
+.entry-meta a,
+.entry-aside a,
+#main #breadcrumbs a,
+#main .woocommerce-breadcrumb a
+{
+    color: #888;
+}
+
+body.font-size-small,
+.font-size-small button,
+.font-size-small input,
+.font-size-small select,
+.font-size-small textarea
+{
+    font-size: 14px;
+}
+
+.font-size-small h1
+{
+    font-size: 32px;
+}
+
+.font-size-small h2
+{
+    font-size: 26px;
+}
+
+.font-size-small h3
+{
+    font-size: 22px;
+}
+
+.font-size-small h4,
+.font-size-small .widget-title
+{
+    font-size: 18px;
+}
+
+.font-size-small h5
+{
+    font-size: 14px;
+}
+
+.font-size-small h6
+{
+    font-size: 12px;
+}
+
+.font-size-small .menu-toggle
+{
+    font-size: 16px;
+}
+
+    .font-size-small .menu-toggle:before
+    {
+        font-size: 12px;
+    }
+
+.font-size-small .widget,
+.font-size-small #colophon,
+.font-size-small .navigation-main .sub-menu,
+.font-size-small #top-navigation li,
+.font-size-small [class*="navigation"] .prev-post,
+.font-size-small [class*="navigation"] .next-post
+{
+    font-size: 12px;
+}
+
+/* 3.3 Large fonts */
+
+body.font-size-large,
+.font-size-large button,
+.font-size-large input,
+.font-size-large select,
+.font-size-large textarea
+{
+    font-size: 18px;
+}
+
+.font-size-large .entry-title
+{
+    font-size: 48px;
+}
+
+.font-size-large h1
+{
+    font-size: 40px;
+}
+
+.font-size-large h2
+{
+    font-size: 32px;
+}
+
+.font-size-large h3
+{
+    font-size: 26px;
+}
+
+.font-size-large h4,
+.font-size-large .widget-title
+{
+    font-size: 22px;
+}
+
+.font-size-large h5
+{
+    font-size: 18px;
+}
+
+.font-size-large h6
+{
+    font-size: 16px;
+}
+
+.body-font-size-small
+{
+    font-size: 14px;
+}
+
+.font-size-small #masthead .site-title
+{
+    font-size: 40px;
+}
+
+.font-size-small #masthead .site-description
+{
+    font-size: 14px;
+}
+
+.font-size-large #masthead .site-title
+{
+    font-size: 60px;
+}
+
+.font-size-large #masthead .site-description
+{
+    font-size: 20px;
+}
+
+.font-size-large .menu-toggle
+{
+    font-size: 24px;
+}
+
+.font-size-large .widget,
+.font-size-large #colophon,
+.font-size-large .navigation-main .sub-menu,
+.font-size-large #top-navigation li,
+.font-size-large [class*="navigation"] .prev-post,
+.font-size-large [class*="navigation"] .next-post
+{
+    font-size: 15px;
+}
+
+/* 5. =Header
+----------------------------------------------- */
+
+.site-header hgroup
+{
+    padding-bottom: 65px;
+    padding-top: 55px;
+}
+
+.site-header.has-top-menu hgroup
+{
+    padding-top: 85px;
+}
+
+.site-header .logo-image
+{
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+    .site-header .logo-image a
+    {
+        display: inline-block;
+        height: 100px;
+    }
+
+    .site-header .logo-image img
+    {
+        display: inline-block;
+        height: 100px;
+        width: auto;
+    }
+
+.site-header .logo-image,
+.site-header .site-title,
+.site-header .site-description {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1040px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header-nav-right .logo-image,
+.header-nav-right .site-title,
+.header-nav-right .site-description
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.site-header .site-title,
+.site-header .site-description,
+.header-nav-right .navigation-main > ul > li > a {
+    text-shadow: 0 0 5px #000000;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.site-header .site-title
+{
+    font-size: 48px;
+    line-height: 1em;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+    .site-header .site-title a
+    {
+        color: #fff;
+        text-decoration: none;
+    }
+
+.site-header .site-description
+{
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
