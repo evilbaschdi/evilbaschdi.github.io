@@ -11,7 +11,7 @@ $(document).ready(
         var elementCounter = 1;
         var rowElementCounter = 1;
         var rowCounter = 1;
-        var divRow = $('<div />').addClass('row').attr('id', `repoRow${rowCounter}`);
+        var divRow = $('<div />').addClass('row').attr('id', 'repoRow' + rowCounter);
 
         $.ajax(reposCall).done(
                 function(response) {
@@ -47,7 +47,7 @@ $(document).ready(
                             const divCardActionWhiteText = $('<div />').addClass('card-action').addClass('white-text');
 
                             const divCardGreyDarken1 = $('<div />').addClass('card').addClass('grey').addClass('darken-1');
-                            const divColS12M4 = $('<div />').addClass('col').addClass('s12').addClass('m4').attr('id', `element${elementCounter}_${repo.name}`);
+                            const divColS12M4 = $('<div />').addClass('col').addClass('s12').addClass('m4').attr('id', 'element' + elementCounter + '_' + repo.name);
 
                             divCardContentWhiteText.append(spanCardTitle);
                             divCardContentWhiteText.append(pLight);
@@ -58,7 +58,7 @@ $(document).ready(
                             divCardActionWhiteText.append(divNoClass);
                             divCardGreyDarken1.append(divCardActionWhiteText);
                             divColS12M4.append(divCardGreyDarken1);
-                            const comment = $(`<!-- ${repo.name} -->`);
+                            const comment = $('<!-- ' + repo.name + ' -->');
                             divRow.append(comment);
                             divRow.append(divColS12M4);
 
@@ -68,7 +68,7 @@ $(document).ready(
                                 rowElementCounter = 1;
                                 rowCounter++;
                                 $('#reposDiv').append(divRow);
-                                divRow = $('<div />').addClass('row').attr('id', `repoRow${rowCounter}`);
+                                divRow = $('<div />').addClass('row').attr('id', 'repoRow' + rowCounter);
                             }
                             elementCounter++;
                         });
