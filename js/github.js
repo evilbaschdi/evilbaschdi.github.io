@@ -4,9 +4,8 @@ $(document).ready(
                 "async": true,
                 "crossDomain": true,
                 "url": 'https://api.github.com/users/evilbaschdi/repos',
-                "method": 'GET',
-                "headers": {
-                    }
+                "method": 'GET'
+
             };
         var elementCounter = 1;
         var rowElementCounter = 1;
@@ -16,7 +15,10 @@ $(document).ready(
         $.ajax(reposCall).done(
                 function(response) {
                     $.each(
-                        response.sort(x => x.pushed_at),
+                        response.sort(
+                            function(a, b) {
+                                return new Date(b.pushed_at) - new Date(a.pushed_at);
+                            }),
                         function(i, repo) {
 
                             const spanCardTitle = $('<span />').addClass('card-title').append(repo.fork ? repo.name + ' (forked)' : repo.name);
