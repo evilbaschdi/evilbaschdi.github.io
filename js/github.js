@@ -26,7 +26,7 @@ $(document).ready(
 
                             var link = '';
                             var linkText = ';';
-                            if (repo.homepage == null || repo.homepage.trim() === '') {
+                            if (repo.homepage === null || repo.homepage.trim() === '') {
                                 linkText = 'Repository';
                                 link = repo.html_url;
                             }
