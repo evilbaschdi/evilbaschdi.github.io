@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "evilbaschdi.github.io", "http://localhost:50934", "{898BC652-75F7-4096-9A57-9B2F7A886C52}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50934"
 		Debug.AspNetCompiler.PhysicalPath = "..\evilbaschdi.github.io\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50934\"
@@ -34,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F45FA053-0356-41D9-8F87-104BAE4CAF6B}
 	EndGlobalSection
 EndGlobal

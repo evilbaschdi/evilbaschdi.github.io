@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "js/github.min.js",
+    "inputFiles": [
+      "js/github.js"
+    ]
+  },
+  {
+    "outputFileName": "js/init.min.js",
+    "inputFiles": [
+      "js/init.js"
+    ]
+  },
+  {
+    "outputFileName": "js/bundle.js",
+    "inputFiles": [
+      "js/github.js",
+      "js/init.js"
+    ]
+  }
+]

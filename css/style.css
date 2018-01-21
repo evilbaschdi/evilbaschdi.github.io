@@ -7,57 +7,41 @@
  * Made By MaterializeCSS.com
  */
 
-body {
-  background-color: #040404;
-}
+body { background-color: #040404; }
 
-nav ul a, nav .brand-logo {
-  color: #444;
-}
+nav ul a, nav .brand-logo { color: #444; }
 
-p {
-  line-height: 2rem;
-}
+p { line-height: 2rem; }
 
-.button-collapse {
-  color: #26a69a;
-}
+.button-collapse { color: #26a69a; }
 
 .parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: #ffffff;
-  color: rgba(255, 255, 255, .9);
+    color: #ffffff;
+    /* ReSharper disable once CssBrowserCompatibility */
+    color: rgba(255, 255, 255, .9);
+    height: auto;
+    line-height: 0;
+    min-height: 380px;
 }
 
-.parallax-container .section {
-  width: 100%;
-}
+.parallax-container .section { width: 100%; }
 
 @media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+
+    #index-banner .section { top: 10%; }
 }
 
 @media only screen and (max-width: 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+    #index-banner .section { top: 0; }
 }
 
-.icon-block {
-  padding: 0 15px;
-}
+.icon-block { padding: 0 15px; }
 
-footer.page-footer {
-  margin: 0;
-}
+footer.page-footer { margin: 0; }
 
 /*
 h1 {
