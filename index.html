@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"
-    prefix="og: http://ogp.me/ns#">
+      prefix="og: http://ogp.me/ns#">
 
 <head prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -36,7 +36,7 @@
     <meta name="msapplication-TileImage" content="http://evilbaschdi.bplaced.net/img/cropped-baschdi_bw-1-270x270.png">
     <title>evilbaschdi</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="font/font.css" rel="stylesheet" />
@@ -46,11 +46,12 @@
     <!-- https://sidecar.gitter.im/ -->
     <script>
         ((window.gitter = {}).chat = {}).options = {
-            room: 'evilbaschdi/Lobby'
-        };
+                room: 'evilbaschdi/Lobby'
+            };
 
     </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <!--<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>-->
+    <script src="lib/gitter-sidecar/sidecar.js" async defer></script>
 </head>
 
 <body>
@@ -169,8 +170,8 @@
     </footer>
 
     <!-- Scripts-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/materialize/js/materialize.min.js"></script>
     <script src="js/bundle.min.js"></script>
 </body>
 
