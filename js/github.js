@@ -33,7 +33,7 @@ $(document).ready(
                                 link = repo.html_url;
                             }
                             else {
-                                linkText = 'GitHub Homepage';
+                                linkText = 'Homepage';
                                 link = repo.homepage;
                             }
 
