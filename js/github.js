@@ -1,80 +1,87 @@
-$(document).ready(
-    function($) {
-        const reposCall = {
-                "async": true,
-                "crossDomain": true,
-                "url": 'https://api.github.com/users/evilbaschdi/repos',
-                "method": 'GET'
+$(
+    async function() {
 
-            };
+        alert('ready');
+
+        //async function requestReposFromGitHub($) {
+        //e04c7831d768dd85dbf9f40be91f499dd94748d6
+        const octokit = new Octokit();
+        const result = await octokit.request(
+            'GET /users/{user}/repos',
+            {
+                user: 'evilbaschdi',
+                type: 'public',
+                per_page: 100
+            });
+
         var elementCounter = 1;
         var rowElementCounter = 1;
         var rowCounter = 1;
-        var divRow = $('<div />').addClass('row').attr('id', 'repoRow' + rowCounter);
+        var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
+        //var response = result.data;
+        //alert(response.length);
+        var response = result.data;
+        alert(response.length);
 
-        $.ajax(reposCall).done(
-                function(response) {
-                    $.each(
-                        response.sort(
-                            function(a, b) {
-                                return new Date(b.pushed_at) - new Date(a.pushed_at);
-                            }),
-                        function(i, repo) {
+        response.each(
+                response.sort(
+                    function(a, b) {
+                        return new Date(b.pushed_at) - new Date(a.pushed_at);
+                    }),
+                function(i, repo) {
+                    alert(i);
+                    alert(repo.name);
+                    var link = '';
+                    var linkText = ';';
+                    if (repo.homepage === null || repo.homepage.trim() === '') {
+                        linkText = 'Repository';
+                        link = repo.html_url;
+                    }
+                    else {
+                        linkText = 'Homepage';
+                        link = repo.homepage;
+                    }
 
-                            const spanCardTitle = $('<span />').addClass('card-title').append(repo.fork ? repo.name + ' (forked)' : repo.name);
-                            const pLight = $('<p />').addClass('light').append(repo.description);
+                    //Card Header
+                    const divCardHeader = $('<div />').addClass('card-header');
+                    const h4CardTitle = $('<h4 />').addClass('card-title').append(repo.fork ? repo.name + ' (forked)' : repo.name);
+                    divCardHeader.append(h4CardTitle);
+                    //Card Body
+                    const divCardBody = $('<div />').addClass('card-body');
+                    const pCardText = $('<p />').addClass('card-text').append(repo.description ? repo.description : '(No description, website, or topics provided.)');
+                    divCardBody.append(pCardText);
+                    //Card Footer
+                    const divCardFooter = $('<div />').addClass('card-footer');
+                    const aHrefBtnBtnLight = $('<a />').addClass('btn').addClass('btn-light')
+                        .attr('href', link)
+                        .attr('target', '_blank')
+                        .attr('rel', 'noopener')
+                        .append(linkText);
+                    divCardFooter.append(aHrefBtnBtnLight);
+                    //Card
+                    const divCardH100TextWhiteBgDarkSpecial = $('<div />').addClass('card').addClass('h-100').addClass('text-white').addClass('bg-dark').addClass('special');
+                    divCardH100TextWhiteBgDarkSpecial.append(divCardHeader);
+                    divCardH100TextWhiteBgDarkSpecial.append(divCardBody);
+                    divCardH100TextWhiteBgDarkSpecial.append(divCardFooter);
+                    //Column
+                    const divColMd4Mb5 = $('<div />').addClass('col-md-4').addClass('mb-5').attr('id', 'element' + elementCounter + '_' + repo.name);
+                    divColMd4Mb5.append(divCardH100TextWhiteBgDarkSpecial);
 
-                            const divNoClass = $('<div />');
+                    const comment = $('<!-- ' + repo.name + ' -->');
 
-                            var link = '';
-                            var linkText = ';';
-                            if (repo.homepage === null || repo.homepage.trim() === '') {
-                                linkText = 'Repository';
-                                link = repo.html_url;
-                            }
-                            else {
-                                linkText = 'Homepage';
-                                link = repo.homepage;
-                            }
+                    divRow.append(comment);
+                    divRow.append(divColMd4Mb5);
 
-                            const aBtnWavesEffectWavesLightGreyDarken4 = $('<a />').addClass('btn').addClass('waves-effect').addClass('waves-light').addClass('grey')
-                                .addClass('darken-4').addClass('z-depth-5')
-                                .attr('href', link)
-                                .attr('target', '_blank')
-                                .attr('rel', 'noopener')
-                                .append(linkText);
-                            const iMaterialIconsRight = $('<i />').addClass('material-icons').addClass('right').append('code');
-
-                            const divCardContentWhiteText = $('<div />').addClass('card-content').addClass('white-text');
-                            const divCardActionWhiteText = $('<div />').addClass('card-action').addClass('white-text');
-
-                            const divCardGreyDarken1 = $('<div />').addClass('card').addClass('grey').addClass('darken-1').addClass('z-depth-5');
-                            const divColS12M4 = $('<div />').addClass('col').addClass('s12').addClass('m4').attr('id', 'element' + elementCounter + '_' + repo.name);
-
-                            divCardContentWhiteText.append(spanCardTitle);
-                            divCardContentWhiteText.append(pLight);
-                            divCardGreyDarken1.append(divCardContentWhiteText);
-
-                            aBtnWavesEffectWavesLightGreyDarken4.append(iMaterialIconsRight);
-                            divNoClass.append(aBtnWavesEffectWavesLightGreyDarken4);
-                            divCardActionWhiteText.append(divNoClass);
-                            divCardGreyDarken1.append(divCardActionWhiteText);
-                            divColS12M4.append(divCardGreyDarken1);
-                            const comment = $('<!-- ' + repo.name + ' -->');
-                            divRow.append(comment);
-                            divRow.append(divColS12M4);
-
-                            rowElementCounter++;
-                            var rest = parseInt(response.length) - parseInt(elementCounter);
-                            if (rest < 2 || rowElementCounter === 4) {
-                                rowElementCounter = 1;
-                                rowCounter++;
-                                $('#reposDiv').append(divRow);
-                                divRow = $('<div />').addClass('row').attr('id', 'repoRow' + rowCounter);
-                            }
-                            elementCounter++;
-                        });
-                }
+                    rowElementCounter++;
+                    var rest = parseInt(response.length) - parseInt(elementCounter);
+                    if (rest < 2 || rowElementCounter === 4) {
+                        rowElementCounter = 1;
+                        rowCounter++;
+                        $('#reposDiv').append(divRow);
+                        divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
+                    }
+                    elementCounter++;
+                },
+                alert('hello')
             );
-
-    }(jQuery));
+    });
