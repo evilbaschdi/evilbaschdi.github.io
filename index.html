@@ -119,7 +119,6 @@
         $(async function () {
             //alert('ready');
 
-            //async function requestReposFromGitHub($) {            
             const octokit = new Octokit();
             const result = await octokit.request('GET /users/{user}/repos', {
                 user: 'evilbaschdi',
