@@ -94,6 +94,12 @@
             <a href="https://de.linkedin.com/pub/sebastian-walter/ba/351/987" target="_blank" rel="noopener" class="btn btn-light btn-lg">LinkedIn</a>
             <a href="https://www.xing.com/profile/Sebastian_Walter26" target="_blank" rel="noopener" class="btn btn-light btn-lg">XING</a>
         </header>
+
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-light" role="status" id="reposDivSpinner">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
         <div id="reposDiv">
         </div>
         <!-- /.row -->
@@ -129,11 +135,9 @@
             var elementCounter = 1;
             var rowElementCounter = 1;
             var rowCounter = 1;
-            var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
-            //var response = result.data;
-            //alert(response.length);
+            var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);                      
             var response = result.data;
-            //alert(response.length);
+            var reposDivSpinner = document.getElementById("reposDivSpinner");
 
             $.each(response,
                 //response.sort(
@@ -191,9 +195,10 @@
                     }
                     elementCounter++;
                     //debugger;
-                },
+                }
                 //alert(elementCounter)
             )
+            reposDivSpinner.style.display = "none";
         });
     </script>
 
