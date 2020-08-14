@@ -89,10 +89,14 @@
             <p class="lead">Welcome to my personal github account</p>
             <hr class="my-4">
             <p>Where to find me?</p>
-            <a href="http://evilbaschdi.bplaced.net/" target="_blank" rel="noopener" class="btn btn-light btn-lg">Home</a>
-            <a href="https://twitter.com/evilbaschdi" target="_blank" rel="noopener" class="btn btn-light btn-lg">Twitter</a>
-            <a href="https://de.linkedin.com/pub/sebastian-walter/ba/351/987" target="_blank" rel="noopener" class="btn btn-light btn-lg">LinkedIn</a>
-            <a href="https://www.xing.com/profile/Sebastian_Walter26" target="_blank" rel="noopener" class="btn btn-light btn-lg">XING</a>
+            <a href="http://evilbaschdi.bplaced.net/" target="_blank" rel="noopener"
+                class="btn btn-light btn-lg">Home</a>
+            <a href="https://twitter.com/evilbaschdi" target="_blank" rel="noopener"
+                class="btn btn-light btn-lg">Twitter</a>
+            <a href="https://de.linkedin.com/pub/sebastian-walter/ba/351/987" target="_blank" rel="noopener"
+                class="btn btn-light btn-lg">LinkedIn</a>
+            <a href="https://www.xing.com/profile/Sebastian_Walter26" target="_blank" rel="noopener"
+                class="btn btn-light btn-lg">XING</a>
         </header>
 
         <div class="d-flex justify-content-center">
@@ -123,8 +127,6 @@
     <script type="module">
         import { Octokit } from "https://cdn.pika.dev/@octokit/core";
         $(async function () {
-            //alert('ready');
-
             const octokit = new Octokit();
             const result = await octokit.request('GET /users/{user}/repos', {
                 user: 'evilbaschdi',
@@ -135,18 +137,16 @@
             var elementCounter = 1;
             var rowElementCounter = 1;
             var rowCounter = 1;
-            var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);                      
+            var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
             var response = result.data;
             var reposDivSpinner = document.getElementById("reposDivSpinner");
 
+            response.sort(
+                function (a, b) {
+                    return new Date(b.pushed_at) - new Date(a.pushed_at);
+                })
             $.each(response,
-                //response.sort(
-                //    function (a, b) {
-                //        return new Date(b.pushed_at) - new Date(a.pushed_at);
-                //    }),
                 function (i, r) {
-                    //debugger;
-                   
                     var link = '';
                     var linkText = ';';
                     if (r.homepage === null || r.homepage.trim() === '') {
@@ -157,7 +157,6 @@
                         linkText = 'Homepage';
                         link = r.homepage;
                     }
-                    //debugger;
                     //Card Header
                     const divCardHeader = $('<div />').addClass('card-header');
                     const h4CardTitle = $('<h4 />').addClass('card-title').append(r.fork ? r.name + ' (forked)' : r.name);
@@ -184,7 +183,7 @@
                     divColMd4Mb5.append(divCardH100TextWhiteBgDarkSpecial);
 
                     divRow.append(divColMd4Mb5);
-                    //debugger;
+
                     rowElementCounter++;
                     var rest = parseInt(response.length) - parseInt(elementCounter);
                     if (rest < 2 || rowElementCounter === 4) {
@@ -194,9 +193,7 @@
                         divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
                     }
                     elementCounter++;
-                    //debugger;
                 }
-                //alert(elementCounter)
             )
             reposDivSpinner.style.display = "none";
         });
