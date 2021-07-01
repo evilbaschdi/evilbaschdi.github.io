@@ -1,87 +1,58 @@
 $(
     async function() {
-
-        alert('ready');
-
-        //async function requestReposFromGitHub($) {
-       
-        const octokit = new Octokit();
-        const result = await octokit.request(
-            'GET /users/{user}/repos',
-            {
-                user: 'evilbaschdi',
-                type: 'public',
-                per_page: 100
-            });
-
-        var elementCounter = 1;
-        var rowElementCounter = 1;
-        var rowCounter = 1;
-        var divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
-        //var response = result.data;
-        //alert(response.length);
-        var response = result.data;
-        alert(response.length);
-
-        response.each(
-                response.sort(
-                    function(a, b) {
-                        return new Date(b.pushed_at) - new Date(a.pushed_at);
-                    }),
-                function(i, repo) {
-                    alert(i);
-                    alert(repo.name);
-                    var link = '';
-                    var linkText = ';';
-                    if (repo.homepage === null || repo.homepage.trim() === '') {
-                        linkText = 'Repository';
-                        link = repo.html_url;
-                    }
-                    else {
-                        linkText = 'Homepage';
-                        link = repo.homepage;
-                    }
-
-                    //Card Header
-                    const divCardHeader = $('<div />').addClass('card-header');
-                    const h4CardTitle = $('<h4 />').addClass('card-title').append(repo.fork ? repo.name + ' (forked)' : repo.name);
-                    divCardHeader.append(h4CardTitle);
-                    //Card Body
-                    const divCardBody = $('<div />').addClass('card-body');
-                    const pCardText = $('<p />').addClass('card-text').append(repo.description ? repo.description : '(No description, website, or topics provided.)');
-                    divCardBody.append(pCardText);
-                    //Card Footer
-                    const divCardFooter = $('<div />').addClass('card-footer');
-                    const aHrefBtnBtnLight = $('<a />').addClass('btn').addClass('btn-light')
-                        .attr('href', link)
-                        .attr('target', '_blank')
-                        .attr('rel', 'noopener')
-                        .append(linkText);
-                    divCardFooter.append(aHrefBtnBtnLight);
-                    //Card
-                    const divCardH100TextWhiteBgDarkSpecial = $('<div />').addClass('card').addClass('h-100').addClass('text-white').addClass('bg-dark').addClass('special');
-                    divCardH100TextWhiteBgDarkSpecial.append(divCardHeader);
-                    divCardH100TextWhiteBgDarkSpecial.append(divCardBody);
-                    divCardH100TextWhiteBgDarkSpecial.append(divCardFooter);
-                    //Column
-                    const divColMd4Mb5 = $('<div />').addClass('col-md-4').addClass('mb-5').attr('id', 'element' + elementCounter + '_' + repo.name);
-                    divColMd4Mb5.append(divCardH100TextWhiteBgDarkSpecial);
-
-                    const comment = $('<!-- ' + repo.name + ' -->');
-
-                    divRow.append(comment);
-                    divRow.append(divColMd4Mb5);
-
-                    rowElementCounter++;
-                    var rest = parseInt(response.length) - parseInt(elementCounter);
-                    if (rest < 2 || rowElementCounter === 4) {
-                        rowElementCounter = 1;
-                        rowCounter++;
-                        $('#reposDiv').append(divRow);
-                        divRow = $('<div />').addClass('row').addClass('text-center').attr('id', 'repoRow' + rowCounter);
-                    }
-                    elementCounter++;
-                },
-                alert('hello')
-            );
+        const a = new Octokit(),
+              e = await a.request('GET /users/{user}/repos', { user: 'evilbaschdi', type: 'public', per_page: 100 });
+        var d = 1,
+            t = 1,
+            s = 1,
+            n = $('<div />')
+                .addClass('row')
+                .addClass('text-center')
+                .attr('id', 'repoRow' + s),
+            p = e.data,
+            r = document.getElementById('reposDivSpinner');
+        p.sort(
+                function(a, e) {
+                    return new Date(e.pushed_at) - new Date(a.pushed_at);
+                }),
+            $.each(
+                p,
+                function(a, e) {
+                    var r = '',
+                        o = ';';
+                    null === e.homepage || '' === e.homepage.trim() ? ((o = 'Repository'), (r = e.html_url)) : ((o = 'Homepage'), (r = e.homepage));
+                    e.archived ? o += ' (archived)' : o += '';
+                    const i = $('<div />').addClass('card-header'),
+                          l = $('<h4 />')
+                              .addClass('card-title')
+                              .append(e.fork ? e.name + ' (forked)' : e.name);
+                    i.append(l);
+                    const c = $('<div />').addClass('card-body'),
+                          C = $('<p />')
+                              .addClass('card-text')
+                              .append(e.description ? e.description : '(No description, website, or topics provided.)');
+                    c.append(C);
+                    const h = $('<div />').addClass('card-footer'),
+                          m = $('<a />').addClass('btn').addClass('btn-light').attr('href', r).attr('target', '_blank').attr('rel', 'noopener').append(o);
+                    h.append(m);
+                    const u = $('<div />').addClass('card').addClass('h-100').addClass('text-white').addClass('bg-dark').addClass('special');
+                    u.append(i), u.append(c), u.append(h);
+                    const v = $('<div />')
+                        .addClass('col-md-4')
+                        .addClass('mb-5')
+                        .attr('id', 'element' + d + '_' + e.name);
+                    v.append(u),
+                        n.append(v),
+                        t++,
+                        (parseInt(p.length) - parseInt(d) < 2 || 4 === t) &&
+                            ((t = 1),
+                                s++,
+                                $('#reposDiv').append(n),
+                                (n = $('<div />')
+                                    .addClass('row')
+                                    .addClass('text-center')
+                                    .attr('id', 'repoRow' + s))),
+                        d++;
+                }),
+            (r.style.display = 'none');
     });
