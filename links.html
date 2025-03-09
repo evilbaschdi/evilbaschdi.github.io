@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//sebastian walter | evilbaschdi</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            /* Für die Zentrierung */
+            flex-direction: column;
+            /* Buttons untereinander anordnen */
+            align-items: center;
+            /* Horizontale Zentrierung */
+            justify-content: center;
+            /* Vertikale Zentrierung (optional, je nach gewünschter Position) */
+            min-height: 100vh;
+            /* Mindesthöhe für die Zentrierung auf dem gesamten Bildschirm */
+            margin: 0;
+            /* Standard-Margin entfernen */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px 0;
+            /* Abstand zwischen den Buttons */
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            /* Dunkelgrauer Hintergrund für den 3D-Effekt */
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            /* 3D-Effekt */
+            transition: transform 0.1s, box-shadow 0.1s;
+            /* Sanfte Übergänge */
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            /* Button leicht nach oben bewegen beim Hover */
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            /* Verstärkter Schatten beim Hover */
+        }
+
+        .button:active {
+            transform: translateY(0);
+            /* Button wieder in die Ausgangsposition beim Klicken */
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            /* Reduzierter Schatten beim Klicken */
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://evilbaschdi.github.io" class="button" target="_blank">Homepage</a>
+    <a>SOCIAL</a>
+    <a href="https://instagram.com/evilbaschdi" class="button" target="_blank">Instagram</a>
+    <a href="https://mastodon.social/@evilbaschdi" class="button" target="_blank">Mastodon</a>
+    <a href="https://bsky.app/profile/evilbaschdi.bsky.social" class="button" target="_blank">Bluesky</a>
+    <a href="https://threads.net/@evilbaschdi" class="button" target="_blank">Threads</a>
+    <a href="https://facebook.com/evil.baschdi" class="button" target="_blank">Facebook</a>
+    <a>DEV</a>
+    <a href="https://github.com/evilbaschdi" class="button" target="_blank">GitHub</a>
+    <a href="https://learn.microsoft.com/en-us/users/swltr/" class="button" target="_blank">Microsoft Learn</a>
+    <a href="https://linkedin.com/in/sebastian-walter-987351ba" class="button" target="_blank">LinkedIn</a>
+    <a href="https://xing.com/profile/Sebastian_Walter26" class="button" target="_blank">XING</a>
+</body>
+
+</html>

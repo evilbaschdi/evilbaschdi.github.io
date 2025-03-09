@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "evilbaschdi.github.io", "http://localhost:50934", "{898BC652-75F7-4096-9A57-9B2F7A886C52}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "evilbaschdi.github.io", "http://localhost:50934", "{542085A1-5652-49C1-84DE-7E15E8C8F2E9}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
@@ -29,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{898BC652-75F7-4096-9A57-9B2F7A886C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{898BC652-75F7-4096-9A57-9B2F7A886C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542085A1-5652-49C1-84DE-7E15E8C8F2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542085A1-5652-49C1-84DE-7E15E8C8F2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
