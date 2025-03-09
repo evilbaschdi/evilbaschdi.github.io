@@ -184,3 +184,5 @@ FakesAssemblies/
 
 .fake
 .ionide
+.idea/
+.vs/
