@@ -3,7 +3,7 @@
   "short_name": "//sebastian walter | evilbaschdi",
   "theme_color": "#212121",
   "background_color": "#212121",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "description": "Dies ist die private Homepage von Sebastian Walter / evilbaschdi",
@@ -11,7 +11,12 @@
     {
       "src": "img/favicon.ico",
       "type": "img/x-icon",
-      "sizes": "16x16 32x32"
+      "sizes": "32x32"
+    },
+    {
+      "src": "img/icon-144.png",
+      "type": "img/png",
+      "sizes": "144x144"
     },
     {
       "src": "img/icon-192.png",
@@ -22,6 +27,12 @@
       "src": "img/icon-512.png",
       "type": "img/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "img/icon-144-maskable.png",
+      "type": "img/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
     },
     {
       "src": "img/icon-192-maskable.png",
