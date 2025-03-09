@@ -6,7 +6,7 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "description": "Dies ist die private Homepage von Sebastian Walter / evilbaschdi",
+  "description": "private Homepage von Sebastian Walter / evilbaschdi",
   "icons": [
     {
       "src": "img/windows11/SmallTile.scale-100.png",
