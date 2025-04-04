@@ -1,58 +1,93 @@
-$(
-    async function() {
-        const a = new window.Octokit(),
-              e = await a.request('GET /users/{user}/repos', { user: 'evilbaschdi', type: 'public', per_page: 100 });
-        var d = 1,
-            t = 1,
-            s = 1,
-            n = $('<div />')
-                .addClass('row')
-                .addClass('text-center')
-                .attr('id', 'repoRow' + s),
-            p = e.data,
-            r = document.getElementById('reposDivSpinner');
-        p.sort(
-                function(a, e) {
-                    return new Date(e.pushed_at) - new Date(a.pushed_at);
-                }),
-            $.each(
-                p,
-                function(a, e) {
-                    var r = '',
-                        o = ';';
-                    null === e.homepage || '' === e.homepage.trim() ? ((o = 'Repository'), (r = e.html_url)) : ((o = 'Homepage'), (r = e.homepage));
-                    e.archived ? o += ' (archived)' : o += '';
-                    const i = window.$('<div />').addClass('card-header'),
-                          l = window.$('<h4 />')
-                              .addClass('card-title')
-                              .append(e.fork ? e.name + ' (forked)' : e.name);
-                    i.append(l);
-                    const c = window.$('<div />').addClass('card-body'),
-                          C = window.$('<p />')
-                              .addClass('card-text')
-                              .append(e.description ? e.description : '(No description, website, or topics provided.)');
-                    c.append(C);
-                    const h = window.$('<div />').addClass('card-footer'),
-                          m = window.$('<a />').addClass('btn').addClass('btn-light').attr('href', r).attr('target', '_blank').attr('rel', 'noopener').append(o);
-                    h.append(m);
-                    const u = window.$('<div />').addClass('card').addClass('h-100').addClass('text-white').addClass('bg-dark').addClass('special');
-                    u.append(i), u.append(c), u.append(h);
-                    const v = window.$('<div />')
-                        .addClass('col-md-4')
-                        .addClass('mb-5')
-                        .attr('id', 'element' + d + '_' + e.name);
-                    v.append(u),
-                        n.append(v),
-                        t++,
-                        (parseInt(p.length) - parseInt(d) < 2 || 4 === t) &&
-                            ((t = 1),
-                                s++,
-                                window.$('#reposDiv').append(n),
-                                (n = window.$('<div />')
-                                    .addClass('row')
-                                    .addClass('text-center')
-                                    .attr('id', 'repoRow' + s))),
-                        d++;
-                }),
-            (r.style.display = 'none');
+import { Octokit } from 'https://esm.sh/@octokit/core';
+
+document.addEventListener(
+    'DOMContentLoaded',
+    async () => {
+        const octokit = new Octokit();
+        const response = await octokit.request(
+            'GET /users/{user}/repos',
+            {
+                user: 'evilbaschdi',
+                type: 'public',
+                per_page: 100
+            });
+
+        let repoIndex = 1;
+        let columnIndex = 1;
+        let rowIndex = 1;
+
+        const reposDiv = document.getElementById('reposDiv');
+        const spinner = document.getElementById('reposDivSpinner');
+        let currentRow = createRow(rowIndex);
+
+        const repos = response.data;
+        repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+        repos.forEach(
+            repo => {
+                const repoCard = createRepoCard(repo, repoIndex);
+                currentRow.appendChild(repoCard);
+
+                columnIndex++;
+                if (columnIndex > 3 || repoIndex === repos.length) {
+                    reposDiv.appendChild(currentRow);
+                    columnIndex = 1;
+                    rowIndex++;
+                    currentRow = createRow(rowIndex);
+                }
+
+                repoIndex++;
+            });
+
+        spinner.style.display = 'none';
     });
+
+function createRow(rowIndex) {
+    const row = document.createElement('div');
+    row.className = 'row text-center';
+    row.id = `repoRow${rowIndex}`;
+    return row;
+}
+
+function createRepoCard(repo, index) {
+    const col = document.createElement('div');
+    col.className = 'col-md-4 mb-5';
+    col.id = `element${index}_${repo.name}`;
+
+    const card = document.createElement('div');
+    card.className = 'card h-100 text-white bg-dark special';
+
+    const cardHeader = document.createElement('div');
+    cardHeader.className = 'card-header';
+
+    const cardTitle = document.createElement('h4');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = repo.fork ? `${repo.name} (forked)` : repo.name;
+    cardHeader.appendChild(cardTitle);
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    const cardText = document.createElement('p');
+    cardText.className = 'card-text';
+    cardText.textContent = repo.description || '(No description, website, or topics provided.)';
+    cardBody.appendChild(cardText);
+
+    const cardFooter = document.createElement('div');
+    cardFooter.className = 'card-footer';
+
+    const link = document.createElement('a');
+    link.className = 'btn btn-light';
+    link.href = repo.homepage && repo.homepage.trim() ? repo.homepage : repo.html_url;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = repo.archived ? 'Homepage (archived)' : 'Homepage';
+    cardFooter.appendChild(link);
+
+    card.appendChild(cardHeader);
+    card.appendChild(cardBody);
+    card.appendChild(cardFooter);
+
+    col.appendChild(card);
+    return col;
+}

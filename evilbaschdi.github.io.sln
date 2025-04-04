@@ -1,41 +1,24 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "evilbaschdi.github.io", "http://localhost:50934", "{542085A1-5652-49C1-84DE-7E15E8C8F2E9}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50934"
-		Debug.AspNetCompiler.PhysicalPath = "..\evilbaschdi.github.io\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50934\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50934"
-		Release.AspNetCompiler.PhysicalPath = "..\evilbaschdi.github.io\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50934\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\evilbaschdi.github.io\"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "evilbaschdi.github.io", "evilbaschdi.github.io.csproj", "{9AEABA13-3927-0BAC-F7E7-90F22ACA15EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{542085A1-5652-49C1-84DE-7E15E8C8F2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{542085A1-5652-49C1-84DE-7E15E8C8F2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEABA13-3927-0BAC-F7E7-90F22ACA15EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEABA13-3927-0BAC-F7E7-90F22ACA15EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEABA13-3927-0BAC-F7E7-90F22ACA15EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEABA13-3927-0BAC-F7E7-90F22ACA15EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F45FA053-0356-41D9-8F87-104BAE4CAF6B}
+		SolutionGuid = {8632BAED-7EA1-4B76-8BEC-267FF9298A3B}
 	EndGlobalSection
 EndGlobal

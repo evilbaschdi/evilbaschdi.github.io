@@ -1,0 +1,11 @@
+[
+    {
+        "outputFileName": "js/github.bundle.js",
+        "inputFiles": [
+            "js/github.js"
+        ],
+        "minify": {
+            "enabled": true
+        }
+    }
+]
