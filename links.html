@@ -10,17 +10,90 @@
 </head>
 
 <body>
+    <!-- Page Content -->
     <a href="https://evilbaschdi.github.io" class="button" target="_blank">Homepage</a>
+    <br />
     <a>SOCIAL</a>
     <a href="https://bsky.app/profile/evilbaschdi.bsky.social" class="button" target="_blank">Bluesky</a>
     <a href="https://mastodon.social/@evilbaschdi" class="button" target="_blank">Mastodon</a>
     <a href="https://instagram.com/evilbaschdi" class="button" target="_blank">Instagram</a>
     <a href="https://facebook.com/evil.baschdi" class="button" target="_blank">Facebook</a>
+    <br />
     <a>DEV</a>
     <a href="https://github.com/evilbaschdi" class="button" target="_blank">GitHub</a>
     <a href="https://learn.microsoft.com/en-us/users/swltr/" class="button" target="_blank">Microsoft Learn</a>
     <a href="https://linkedin.com/in/sebastian-walter-987351ba" class="button" target="_blank">LinkedIn</a>
     <a href="https://xing.com/profile/Sebastian_Walter26" class="button" target="_blank">XING</a>
+    <br />
+    <br />
+    <button type="button" class="collapsible-header">📄 Rechtliches</button>
+    <div class="collapsible-content">
+        <div>
+            <h3>Impressum</h3>
+        </div>
+        <div>
+            <h4>Angaben gemäß § 5 TMG</h4>
+            <p>
+                Sebastian Walter
+                <br /> Kindergartenstraße 1
+                <br /> 92348 Berg
+                <br /> E-Mail:
+                sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
+            </p>
+        </div>
+
+        <div>
+            <h4>Datenschutzerklärung</h4>
+        </div>
+        <div>
+            <p>
+                Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
+                (z.B.
+                IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
+                Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte
+                weitergegeben.<br>
+                Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der
+                Anfrage
+                gespeichert. Es erfolgt keine Weitergabe an Dritte.
+            </p>
+            <p>
+                Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten
+                Daten.
+                Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>
+                &copy; 2012 -
+                <script>document.write(new Date().getFullYear().toString())</script> evilbaschdi | Published with
+                <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript für die Funktionalität
+        document.addEventListener('DOMContentLoaded', function () {
+            var coll = document.getElementsByClassName("collapsible-header");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.classList.contains("active")) {
+                        content.classList.remove("active");
+                    } else {
+                        content.classList.add("active");
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
