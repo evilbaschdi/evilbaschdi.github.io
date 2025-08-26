@@ -76,15 +76,15 @@
     </footer>
 
     <script>
-        // JavaScript für die Funktionalität
+
         document.addEventListener('DOMContentLoaded', function () {
-            var coll = document.getElementsByClassName("collapsible-header");
-            var i;
+            const coll = document.getElementsByClassName("collapsible-header");
+            let i;
 
             for (i = 0; i < coll.length; i++) {
                 coll[i].addEventListener("click", function () {
                     this.classList.toggle("active");
-                    var content = this.nextElementSibling;
+                    let content = this.nextElementSibling;
                     if (content.classList.contains("active")) {
                         content.classList.remove("active");
                     } else {
@@ -93,7 +93,9 @@
                 });
             }
         });
+
     </script>
+
 </body>
 
 </html>
