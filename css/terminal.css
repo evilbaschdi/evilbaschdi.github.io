@@ -1,0 +1,86 @@
+/* Globale Variablen für einfache Farbanpassungen */
+:root {
+    --background-color: #111111;
+    --main-text-color: #4a90e2;
+    --prompt-color: #a0a0a0;
+    --highlight-color: #c9ff00;
+    --error-color: #d0021b;
+    --warning-color: #f5a623;
+}
+
+body {
+    color: var(--main-text-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    overflow-y: scroll;
+
+    background: url('../img/me.jpg') no-repeat center center fixed;
+    display: flex;
+    /* Für die Zentrierung */
+    flex-direction: column;
+    /* Buttons untereinander anordnen */
+    align-items: center;
+    /* Horizontale Zentrierung */
+    justify-content: center;
+    /* Vertikale Zentrierung (optional, je nach gewünschter Position) */
+    min-height: 100vh;
+    /* Mindesthöhe für die Zentrierung auf dem gesamten Bildschirm */
+    margin: 0;
+    /* Standard-Margin entfernen */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#terminal {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid var(--prompt-color);
+    box-shadow: 0 0 15px rgba(169, 177, 214, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.line {
+    display: flex;
+    align-items: baseline;
+}
+
+.prompt {
+    color: var(--prompt-color);
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.output {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+}
+
+.output-command {
+    color: var(--highlight-color);
+    flex-grow: 1;
+}
+
+a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Versteckt die Eingabezeile am Anfang */
+#input-line {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
