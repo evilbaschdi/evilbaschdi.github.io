@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const commandContent = {
         'willkommen': "Willkommen auf meiner Homepage!",
         'about': "Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe für sauberen Code und innovative Lösungen. Ich liebe es, komplexe Probleme in elegante und funktionale Anwendungen zu verwandeln. Ich bin spezialisiert auf die Entwicklung von .NET Anwendungen und habe Erfahrung in der gesamten Software-Entwicklungspipeline, von der Konzeption bis zur Bereitstellung.\n\nIn meiner Freizeit, wenn ich da nicht auch programmiere, höre und mache ich gerne Musik und interessiere mich für gutes Essen.",
-        'portfolio': `Als spezialisierter .NET Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne Desktop-Anwendungen.
+        'portfolio': `Als .NET Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne Desktop-Anwendungen.
 
   - **Sprachen & Frameworks:** C#, .NET (Core / Framework), ASP.NET Core
   - **API & Schnittstellen:** REST, OData, ASP.NET Web API
