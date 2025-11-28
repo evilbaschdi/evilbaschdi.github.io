@@ -1,49 +1,42 @@
 /* Globale Variablen für einfache Farbanpassungen */
 :root {
-    --background-color: #111111;
-    --main-text-color: #4a90e2;
-    --prompt-color: #a0a0a0;
-    --highlight-color: #c9ff00;
-    --error-color: #d0021b;
-    --warning-color: #f5a623;
+    --background-color: #202020;
+    --main-text-color: white;
+    --prompt-color: #ff4444;
+    --highlight-color: #ff4444;
+    --error-color: #cc0000;
+    --warning-color: #ff6666;
 }
 
 body {
     color: var(--main-text-color);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     padding: 20px;
     overflow-y: scroll;
 
-    background: url('../img/me.jpg') no-repeat center center fixed;
-    display: flex;
-    /* Für die Zentrierung */
-    flex-direction: column;
-    /* Buttons untereinander anordnen */
-    align-items: center;
-    /* Horizontale Zentrierung */
-    justify-content: center;
-    /* Vertikale Zentrierung (optional, je nach gewünschter Position) */
-    min-height: 100vh;
-    /* Mindesthöhe für die Zentrierung auf dem gesamten Bildschirm */
-    margin: 0;
-    /* Standard-Margin entfernen */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background: #202020 url('../img/me.jpg') no-repeat center center fixed;
     background-size: cover;
-    -o-background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 #terminal {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    border: 1px solid var(--prompt-color);
-    box-shadow: 0 0 15px rgba(169, 177, 214, 0.5);
-    padding: 10px;
+    border: 1px solid rgba(255, 68, 68, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18), 0 0 2px rgba(0, 0, 0, 0.12);
+    padding: 16px;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.0605);
+    backdrop-filter: saturate(180%) blur(40px);
+    border-radius: 8px;
 }
 
 .line {
@@ -69,11 +62,12 @@ body {
 
 a {
     color: var(--highlight-color);
-    text-decoration: none;
+    text-decoration: underline;
+    transition: all 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #ff6666;
 }
 
 /* Versteckt die Eingabezeile am Anfang */
