@@ -2,10 +2,10 @@
 :root {
     --background-color: #202020;
     --main-text-color: white;
-    --prompt-color: #ff4444;
-    --highlight-color: #ff4444;
-    --error-color: #cc0000;
-    --warning-color: #ff6666;
+    --prompt-color: #7a8c52;
+    --highlight-color: #7a8c52;
+    --error-color: #5a7a42;
+    --warning-color: #8fa56d;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 68, 68, 0.4);
+    border: 1px solid rgba(107, 117, 85, 0.4);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18), 0 0 2px rgba(0, 0, 0, 0.12);
     padding: 16px;
     box-sizing: border-box;
@@ -67,7 +67,7 @@ a {
 }
 
 a:hover {
-    color: #ff6666;
+    color: #8fa56d;
 }
 
 /* Versteckt die Eingabezeile am Anfang */
