@@ -87,14 +87,14 @@
     <footer>
         <div>
             <p>
-                &copy; 2012 -
-                <script>document.write(new Date().getFullYear().toString())</script> evilbaschdi
+                &copy; 2012 - <span id="year"></span> evilbaschdi
             </p>
         </div>
     </footer>
 
     <script>
 
+        document.getElementById('year').textContent = new Date().getFullYear().toString();
         document.addEventListener('DOMContentLoaded', function () {
             const coll = document.getElementsByClassName("collapsible-header");
             let i;
