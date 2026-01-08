@@ -22,14 +22,16 @@
     <footer>
         <div class="center">
             <p>
-                &copy; 2012 -
-                <script>document.write(new Date().getFullYear().toString())</script> Sebastian Walter. | Published with
+                &copy; 2012 - <span id="year"></span> Sebastian Walter | Published with
                 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
             </p>
         </div>
     </footer>
 
     <script src="js/terminal.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear().toString();
+    </script>
 
 </body>
 
