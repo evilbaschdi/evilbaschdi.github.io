@@ -1,11 +1,34 @@
 /* Globale Variablen für einfache Farbanpassungen */
 :root {
+    color-scheme: dark;
     --background-color: #202020;
-    --main-text-color: white;
-    --prompt-color: #7a8c52;
-    --highlight-color: #7a8c52;
+    --main-text-color: #f8f8f5;
+    --prompt-color: #9ab66b;
+    --highlight-color: #9ab66b;
     --error-color: #5a7a42;
     --warning-color: #8fa56d;
+    --panel-background: rgba(255, 255, 255, 0.0605);
+    --panel-border: rgba(107, 117, 85, 0.4);
+    --background-photo: url('../img/me.jpg');
+    --background-overlay: rgba(0, 0, 0, 0.12);
+    --control-background: rgba(32, 32, 32, 0.78);
+    --control-active-background: #7a8c52;
+    --control-active-text: #11140c;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --background-color: #f3f4ed;
+    --main-text-color: #202118;
+    --prompt-color: #4c6000;
+    --highlight-color: #4c6000;
+    --panel-background: rgba(255, 255, 255, 0.78);
+    --panel-border: rgba(31, 35, 18, 0.18);
+    --background-photo: url('../img/me_light.jpg');
+    --background-overlay: rgba(255, 255, 255, 0.1);
+    --control-background: rgba(255, 255, 255, 0.9);
+    --control-active-background: #dcedb2;
+    --control-active-text: #202118;
 }
 
 body {
@@ -17,7 +40,11 @@ body {
     padding: 20px;
     overflow-y: scroll;
 
-    background: #202020 url('../img/me.jpg') no-repeat center center fixed;
+    background-color: var(--background-color);
+    background-image: linear-gradient(var(--background-overlay), var(--background-overlay)), var(--background-photo);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -26,15 +53,78 @@ body {
     min-height: 100vh;
 }
 
+.site-controls {
+    position: fixed;
+    z-index: 10;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px;
+    border: 1px solid var(--panel-border);
+    border-radius: 999px;
+    background: var(--control-background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(18px) saturate(140%);
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.language-switch button,
+.theme-toggle {
+    display: grid;
+    min-width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--main-text-color);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.language-switch button[aria-pressed="true"] {
+    background: var(--control-active-background);
+    color: var(--control-active-text);
+}
+
+.theme-toggle {
+    width: 36px;
+    font-size: 1rem;
+}
+
+.language-switch button:hover,
+.theme-toggle:hover {
+    background-color: rgba(127, 127, 127, 0.18);
+}
+
+.language-switch button[aria-pressed="true"]:hover {
+    background-color: var(--control-active-background);
+}
+
+.language-switch button:focus-visible,
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--highlight-color);
+    outline-offset: 2px;
+}
+
 #terminal {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    border: 1px solid rgba(107, 117, 85, 0.4);
+    border: 1px solid var(--panel-border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18), 0 0 2px rgba(0, 0, 0, 0.12);
     padding: 16px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.0605);
+    background: var(--panel-background);
     backdrop-filter: saturate(180%) blur(40px);
     border-radius: 8px;
 }

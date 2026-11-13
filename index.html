@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
-<html lang="de" xmlns="http://www.w3.org/1999/xhtml" prefix="og: https://ogp.me/ns#">
+<html lang="de" data-theme="dark" xmlns="http://www.w3.org/1999/xhtml" prefix="og: https://ogp.me/ns#">
 
 <head prefix="og: https://ogp.me/ns#">
     <title>//sebastian walter | evilbaschdi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
+    <meta name="theme-color" content="#202020">
+    <meta name="description" data-page-description
         content="Ich bin Sebastian Walter, leidenschaftlicher .NET Softwareentwickler mit Expertise in C#, ASP.NET Core und Azure. Sauberer Code und innovative Lösungen sind meine Passion.">
     <meta name="author" content="Sebastian Walter">
     <!-- Open Graph data -->
@@ -28,91 +29,98 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#212121">
     <meta name="msapplication-TileImage" content="https://evilbaschdi.github.io/img/icon-512.png">
     <link href="css/style.css" rel="stylesheet" />
-    <link href="font/font.css" rel="preload" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="manifest" href="/manifest.webmanifest">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="js/site.js" defer></script>
 </head>
 
-<body>
+<body data-page="home">
     <!-- Page Content -->
-    <div style="text-align: center; margin: 30px auto;">
-        <img src="img/icon-144.png" alt="Sebastian Walter | evilbaschdi"
+    <header class="site-controls">
+        <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria-label="language.label">
+            <button type="button" data-language="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="true"
+            aria-label="Dunkles Design" title="Dunkles Design">
+            <span aria-hidden="true">☾</span>
+        </button>
+    </header>
+    <div class="profile-mark">
+        <img src="img/icon-144.png" alt="Sebastian Walter | evilbaschdi" data-i18n-alt="brand.alt"
             style="width: 144px; height: 144px; border-radius: 50%; box-shadow: 0 8px 32px 0 rgba(107, 117, 85, 0.4); border: 3px solid rgba(107, 117, 85, 0.3); padding: 5px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);">
     </div>
     <h1>//sebastian walter | evilbaschdi</h1>
 
-    <a>INFO</a>
-    <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <a data-i18n="section.info">INFO</a>
+    <p data-i18n="home.about.first" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
         Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe für sauberen
         Code und innovative Lösungen.
     </p>
-    <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p data-i18n="home.about.second" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
         Ich habe eine Begeisterung dafür entwickelt, komplexen Problemstellungen mit eleganten und funktionalen
         Anwendungen zu begegnen.
     </p>
-    <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p data-i18n="home.about.third" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
         Ich bin spezialisiert auf die Entwicklung von .NET-Anwendungen und habe Erfahrung in der gesamten
         Software-Entwicklungspipeline, von der Konzeption bis zur Bereitstellung.
     </p>
-    <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p data-i18n="home.about.fourth" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
         In meiner Freizeit, wenn ich nicht gerade programmiere, höre und mache ich gerne Musik und interessiere mich
         für gutes Essen.
     </p>
 
-    <a id="projects">CODING</a>
-    <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <a id="projects" data-i18n="section.coding">CODING</a>
+    <p data-i18n="home.coding" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
         Als .NET-Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne
         Desktop-Anwendungen.
     </p>
 
     <div style="max-width: 700px; margin: 20px auto; text-align: left; line-height: 2;">
-        <p><b>Sprachen & Frameworks:</b><br>C#, .NET (Core / Framework), ASP.NET Core</p>
+        <p><b data-i18n="skills.languages">Sprachen & Frameworks:</b><br>C#, .NET (Core / Framework), ASP.NET Core</p>
 
-        <p><b>API & Schnittstellen:</b><br>REST, OData, ASP.NET Web API</p>
+        <p><b data-i18n="skills.api">API & Schnittstellen:</b><br>REST, OData, ASP.NET Web API</p>
 
-        <p><b>Cloud (Azure):</b><br>Azure Functions, Azure API Management, Azure App Service</p>
+        <p><b data-i18n="skills.cloud">Cloud (Azure):</b><br>Azure Functions, Azure API Management, Azure App Service</p>
 
-        <p><b>Desktop UI:</b><br>Avalonia UI, WPF</p>
+        <p><b data-i18n="skills.desktop">Desktop UI:</b><br>Avalonia UI, WPF</p>
 
-        <p><b>Datenbanken:</b><br>MS SQL Server, Entity Framework Core</p>
+        <p><b data-i18n="skills.databases">Datenbanken:</b><br>MS SQL Server, Entity Framework Core</p>
 
-        <p><b>Tools & Prinzipien:</b><br>Git, CI/CD, Clean Architecture, SOLID</p>
+        <p><b data-i18n="skills.tools">Tools & Prinzipien:</b><br>Git, CI/CD, Clean Architecture, SOLID</p>
 
-        <p><b>Projekte:</b><br>Alle meine privaten Projekte findet ihr auf GitHub (siehe „Links“).</p>
+        <p><b data-i18n="skills.projects">Projekte:</b><br><span data-i18n="home.projects">Alle meine privaten Projekte findet ihr auf GitHub (siehe „Links“).</span></p>
     </div>
 
-    <button type="button" class="collapsible-header" id="disclaimer">📄 Rechtliches</button>
+    <button type="button" class="collapsible-header" id="disclaimer" aria-expanded="false" data-i18n="legal.button">📄 Rechtliches</button>
     <div class="collapsible-content">
         <div>
-            <h3>Impressum</h3>
+            <h3 data-i18n="legal.imprint">Impressum</h3>
         </div>
         <div>
-            <h4>Angaben gemäß § 5 TMG</h4>
+            <h4 data-i18n="legal.imprint.heading">Angaben gemäß § 5 TMG</h4>
             <p>
                 Sebastian Walter
                 <br /> Kindergartenstraße 1
                 <br /> 92348 Berg
-                <br /> E-Mail:
+                <br /> <span data-i18n="legal.email">E-Mail:</span>
                 sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
             </p>
         </div>
 
         <div>
-            <h4>Datenschutzerklärung</h4>
+            <h4 data-i18n="legal.privacy">Datenschutzerklärung</h4>
         </div>
         <div>
-            <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+            <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;"><span data-i18n="legal.privacy.first">
                 Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
                 (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
-                Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte weitergegeben.<br>
+                Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte weitergegeben.</span><br><span data-i18n="legal.privacy.second">
                 Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
-                gespeichert. Es erfolgt keine Weitergabe an Dritte.
+                gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
             </p>
-            <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+            <p data-i18n="legal.privacy.rights" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
                 Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten.
                 Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
             </p>
@@ -120,7 +128,7 @@
     </div>
     <br />
 
-    <a href="links.html" class="button" target="_blank">Links</a>
+    <a href="links.html" class="button" target="_blank" data-i18n="links.button">Links</a>
 
     <!-- Footer -->
     <footer>
@@ -130,26 +138,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-
-        document.getElementById('year').textContent = new Date().getFullYear().toString();
-        document.addEventListener('DOMContentLoaded', function () {
-            const coll = document.getElementsByClassName("collapsible-header");
-            let i;
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    let content = this.nextElementSibling;
-                    if (content.classList.contains("active")) {
-                        content.classList.remove("active");
-                    } else {
-                        content.classList.add("active");
-                    }
-                });
-            }
-        });
-    </script>
 
 </body>
 

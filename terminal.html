@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#202020">
+    <meta name="description" data-page-description content="Sebastian Walters Portfolio als interaktives Terminal.">
     <title>//sebastian walter | evilbaschdi</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/terminal.css">
+    <script src="js/site.js" defer></script>
 </head>
 
-<body>
+<body data-page="terminal">
+    <header class="site-controls">
+        <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria-label="language.label">
+            <button type="button" data-language="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="true"
+            aria-label="Dunkles Design" title="Dunkles Design">
+            <span aria-hidden="true">☾</span>
+        </button>
+    </header>
 
     <div id="terminal">
         <div id="terminal-output"></div>
         <div class="line" id="input-line">
-            <span class="prompt">besucher@homepage:~$</span>
+            <span class="prompt" data-i18n="terminal.prompt">besucher@homepage:~$</span>
             <input type="text" class="command" id="commandInput" readonly>
         </div>
     </div>
@@ -22,17 +35,13 @@
     <footer>
         <div class="center">
             <p>
-                &copy; 2012 - <span id="year"></span> Sebastian Walter | Published with
+                &copy; 2012 - <span id="year"></span> Sebastian Walter | <span data-i18n="terminal.published">Veröffentlicht mit</span>
                 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
             </p>
         </div>
     </footer>
 
     <script src="js/terminal.js"></script>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear().toString();
-    </script>
-
 </body>
 
 </html>
