@@ -7,12 +7,13 @@
     --highlight-color: #9ab66b;
     --error-color: #5a7a42;
     --warning-color: #8fa56d;
+    --link-hover-color: #8fa56d;
     --panel-background: rgba(255, 255, 255, 0.0605);
     --panel-border: rgba(107, 117, 85, 0.4);
     --background-photo: url('../img/me.jpg');
     --background-overlay: rgba(0, 0, 0, 0.12);
     --control-background: rgba(32, 32, 32, 0.78);
-    --control-active-background: #7a8c52;
+    --control-active-background: #9ab66b;
     --control-active-text: #11140c;
 }
 
@@ -20,15 +21,18 @@
     color-scheme: light;
     --background-color: #f3f4ed;
     --main-text-color: #202118;
-    --prompt-color: #4c6000;
-    --highlight-color: #4c6000;
+    --prompt-color: #5a7043;
+    --highlight-color: #5a7043;
+    --error-color: #9a3f3a;
+    --warning-color: #76591d;
+    --link-hover-color: #536b42;
     --panel-background: rgba(255, 255, 255, 0.78);
-    --panel-border: rgba(31, 35, 18, 0.18);
+    --panel-border: rgba(31, 49, 55, 0.18);
     --background-photo: url('../img/me_light.jpg');
     --background-overlay: rgba(255, 255, 255, 0.1);
     --control-background: rgba(255, 255, 255, 0.9);
-    --control-active-background: #dcedb2;
-    --control-active-text: #202118;
+    --control-active-background: #9ab66b;
+    --control-active-text: #11140c;
 }
 
 body {
@@ -157,7 +161,7 @@ a {
 }
 
 a:hover {
-    color: #8fa56d;
+    color: var(--link-hover-color);
 }
 
 /* Versteckt die Eingabezeile am Anfang */

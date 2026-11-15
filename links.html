@@ -78,43 +78,40 @@
             </div>
         </section>
     </main>
-    <br />
-    <button type="button" class="collapsible-header" id="legal" aria-expanded="false" data-i18n="legal.button">📄
-        Rechtliches</button>
-    <div class="collapsible-content">
-        <section class="legal-section">
-            <h3 data-i18n="legal.imprint">Impressum</h3>
-        </section>
-        <section class="legal-section">
-            <h4 data-i18n="legal.imprint.heading">Angaben gemäß § 5 DDG</h4>
-            <address class="legal-contact">
-                Sebastian Walter
-                <br /> Kindergartenstraße 1
-                <br /> 92348 Berg
-                <br /> <span data-i18n="legal.email">E-Mail:</span>
-                sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
-            </address>
-        </section>
-
-        <section class="legal-section">
-            <h4 data-i18n="legal.privacy">Datenschutzerklärung</h4>
-            <p class="legal-copy"><span data-i18n="legal.privacy.first">
+    <section class="legal-disclosure" aria-label="Rechtliches" data-i18n-aria-label="legal.label">
+        <button type="button" class="collapsible-header" id="legal" aria-expanded="false"
+            data-i18n="legal.button">📄 Rechtliches</button>
+        <div class="collapsible-content">
+            <section class="legal-content">
+                <h2 data-i18n="legal.imprint">Impressum</h2>
+                <h3 data-i18n="legal.imprint.heading">Angaben gemäß § 5 DDG</h3>
+                <p class="legal-copy" data-i18n="legal.private">
+                    Dies ist ein privater, nicht-kommerzieller Internetauftritt.
+                </p>
+                <address class="legal-contact">
+                    Sebastian Walter<br>
+                    Kindergartenstraße 1<br>
+                    92348 Berg<br>
+                    <span data-i18n="legal.email">E-Mail:</span>
+                    sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
+                </address>
+                <h3 data-i18n="legal.privacy">Datenschutzerklärung</h3>
+                <p class="legal-copy"><span data-i18n="legal.privacy.first">
                     Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
-                    (z.B.
-                    IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
+                    (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
                     Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte
-                    weitergegeben.</span><br><span data-i18n="legal.privacy.second">
-                    Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der
-                    Anfrage
+                    weitergegeben.</span><br>
+                    <span data-i18n="legal.privacy.second">
+                    Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
                     gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
-            </p>
-            <p class="legal-copy" data-i18n="legal.privacy.rights">
-                Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten
-                Daten.
-                Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
-            </p>
-        </section>
-    </div>
+                </p>
+                <p class="legal-copy" data-i18n="legal.privacy.rights">
+                    Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten.
+                    Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
+                </p>
+            </section>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>

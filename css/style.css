@@ -11,8 +11,11 @@
   --panel-border: rgba(107, 117, 85, 0.4);
   --panel-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 0 2px rgba(0, 0, 0, 0.12);
   --control-background: rgba(32, 32, 32, 0.78);
-  --control-active-background: #7a8c52;
+  --control-active-background: #9ab66b;
   --control-active-text: #11140c;
+  --control-hover-background: #a0b476;
+  --profile-border: rgba(107, 117, 85, 0.3);
+  --profile-glow: rgba(107, 117, 85, 0.4);
   --background-photo: url('../img/me.jpg');
   --background-overlay: rgba(0, 0, 0, 0.12);
 }
@@ -21,16 +24,18 @@
   color-scheme: light;
   --background-color: #f3f4ed;
   --main-text-color: #202118;
-  --accent-color: #4c6000;
-  --heading-start: #52652f;
-  --heading-end: #40572d;
+  --accent-color: #5a7043;
+  --heading-start: #5a7043;
+  --heading-end: #536b42;
   --panel-background: rgba(255, 255, 255, 0.76);
   --panel-hover: rgba(255, 255, 255, 0.94);
-  --panel-border: rgba(31, 35, 18, 0.18);
+  --panel-border: rgba(31, 49, 55, 0.18);
   --panel-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --control-background: rgba(255, 255, 255, 0.9);
-  --control-active-background: #dcedb2;
-  --control-active-text: #202118;
+  --control-active-background: #9ab66b;
+  --control-active-text: #11140c;
+  --profile-border: rgba(90, 112, 67, 0.3);
+  --profile-glow: rgba(90, 112, 67, 0.4);
   --background-photo: url('../img/me_light.jpg');
   --background-overlay: rgba(255, 255, 255, 0.1);
 }
@@ -249,11 +254,11 @@ h2.section-title {
   box-sizing: border-box;
   width: 112px;
   height: 112px;
-  border: 3px solid rgba(107, 117, 85, 0.3);
+  border: 3px solid var(--profile-border);
   border-radius: 50%;
   padding: 5px;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(107, 117, 85, 0.4);
+  box-shadow: 0 8px 32px 0 var(--profile-glow);
   backdrop-filter: blur(10px);
 }
 
@@ -312,26 +317,27 @@ p:hover {
   padding: 11px 20px;
   margin: 16px 8px;
   text-decoration: none;
-  background: var(--panel-background);
+  background: var(--control-active-background);
   backdrop-filter: saturate(180%) blur(40px);
-  border: 1px solid var(--panel-border);
+  border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: var(--panel-shadow);
   transition: all 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
+  color: var(--control-active-text);
   font-weight: 600;
   letter-spacing: 0;
   font-size: 0.875rem;
 }
 
 .button:hover {
-  background: var(--panel-hover);
-  border-color: var(--panel-border);
+  background: var(--control-hover-background);
+  border-color: transparent;
   box-shadow: var(--panel-shadow);
   transform: translateY(-1px);
 }
 
 .button:active {
-  background: var(--panel-background);
+  background: var(--control-active-background);
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   transition: all 0.067s cubic-bezier(0.1, 0.9, 0.2, 1);
@@ -432,6 +438,126 @@ p:hover {
   font-style: normal;
 }
 
+.legal-disclosure {
+  box-sizing: border-box;
+  width: min(100%, var(--content-width));
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  margin: 24px auto;
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+}
+
+.legal-disclosure .collapsible-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 20px 26px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--main-text-color);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-align: left;
+}
+
+.legal-disclosure .collapsible-header::after {
+  color: var(--accent-color);
+  content: "+";
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.legal-disclosure .collapsible-header[aria-expanded="true"] {
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.legal-disclosure .collapsible-header[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.legal-disclosure .collapsible-header:hover {
+  background: var(--panel-hover);
+  box-shadow: none;
+  transform: none;
+}
+
+.legal-disclosure .collapsible-header:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -4px;
+}
+
+.legal-disclosure .collapsible-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 0;
+  margin: 0;
+  padding: 0 26px;
+  opacity: 0;
+  transition: max-height 240ms ease, opacity 160ms ease, padding 240ms ease;
+}
+
+.legal-disclosure .collapsible-content.active {
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: 1500px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 26px;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.legal-disclosure .legal-content h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.legal-disclosure .legal-content h3 {
+  margin: 26px 0 8px;
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.legal-disclosure .legal-contact {
+  width: auto;
+  max-width: 760px;
+  border: 0;
+  border-radius: 0;
+  margin: 0 0 26px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  font-style: normal;
+}
+
+.legal-disclosure .legal-copy {
+  max-width: 760px;
+  margin: 16px 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0 !important;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  line-height: 1.7;
+  transition: none;
+}
+
 .legal-copy {
   padding: 16px 20px !important;
 }
@@ -498,7 +624,6 @@ footer .footer-top {
   .home-copy,
   .skills-list,
   .links-page,
-  .collapsible-content.active,
   footer {
     width: calc(100% + 8px);
     margin-inline: -4px;
@@ -564,7 +689,6 @@ footer .footer-top {
   .home-copy,
   .skills-list,
   .links-page,
-  .collapsible-content.active,
   footer {
     width: calc(100% + 16px);
     margin-inline: -8px;
@@ -595,5 +719,13 @@ footer .footer-top {
 
   .site-header nav a {
     font-size: 0.72rem !important;
+  }
+
+  .legal-disclosure .collapsible-header {
+    padding: 18px 20px;
+  }
+
+  .legal-disclosure .collapsible-content.active {
+    padding: 20px;
   }
 }

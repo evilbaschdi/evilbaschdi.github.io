@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 projekte: `Sämtliche meiner privaten Projekte sind auf <a href="https://github.com/evilbaschdi" target="_blank">GitHub</a> zu finden`,
                 links: `Weitere <a href="https://evilbaschdi.github.io/links" target="_blank">Links</a>.`,
                 impressum: `Angaben gemäß § 5 DDG:
+Dies ist ein privater, nicht-kommerzieller Internetauftritt.
+
 Sebastian Walter
 Kindergartenstraße 1
 92348 Berg
@@ -39,6 +41,8 @@ E-Mail: sebwalter@gmx.net`
                 projects: `All of my personal projects can be found on <a href="https://github.com/evilbaschdi" target="_blank">GitHub</a>.`,
                 links: `More <a href="links.html" target="_blank">links</a>.`,
                 legal: `Information pursuant to Section 5 DDG:
+This is a private, non-commercial website.
+
 Sebastian Walter
 Kindergartenstraße 1
 92348 Berg

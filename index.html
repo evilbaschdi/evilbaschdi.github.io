@@ -29,6 +29,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#212121">
     <meta name="msapplication-TileImage" content="https://evilbaschdi.github.io/img/icon-512.png">
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -36,7 +37,6 @@
 </head>
 
 <body id="top" data-page="home">
-    <!-- Page Content -->
     <header class="site-header">
         <a class="brand" href="#top" aria-label="//sebastian walter | evilbaschdi">
             <img src="img/icon-144.png" alt="">
@@ -59,104 +59,174 @@
             </button>
         </div>
     </header>
-    <div class="profile-mark">
-        <img src="img/icon-144.png" alt="Sebastian Walter | evilbaschdi" data-i18n-alt="brand.alt"
-            style="width: 144px; height: 144px; border-radius: 50%; box-shadow: 0 8px 32px 0 rgba(107, 117, 85, 0.4); border: 3px solid rgba(107, 117, 85, 0.3); padding: 5px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);">
-    </div>
-    <h1>//sebastian walter | evilbaschdi</h1>
-
-    <h2 id="info" class="section-title" data-i18n="section.info">INFO</h2>
-    <p class="home-copy" data-i18n="home.about.first">
-        Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe für sauberen
-        Code und innovative Lösungen.
-    </p>
-    <p class="home-copy" data-i18n="home.about.second">
-        Ich habe eine Begeisterung dafür entwickelt, komplexen Problemstellungen mit eleganten und funktionalen
-        Anwendungen zu begegnen.
-    </p>
-    <p class="home-copy" data-i18n="home.about.third">
-        Ich bin spezialisiert auf die Entwicklung von .NET-Anwendungen und habe Erfahrung in der gesamten
-        Software-Entwicklungspipeline, von der Konzeption bis zur Bereitstellung.
-    </p>
-    <p class="home-copy" data-i18n="home.about.fourth">
-        In meiner Freizeit, wenn ich nicht gerade programmiere, höre und mache ich gerne Musik und interessiere mich
-        für gutes Essen.
-    </p>
-
-    <h2 id="coding" class="section-title" data-i18n="section.coding">CODING</h2>
-    <p class="home-copy" data-i18n="home.coding">
-        Als .NET-Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne
-        Desktop-Anwendungen.
-    </p>
-
-    <div class="skills-list">
-        <p><b data-i18n="skills.languages">Sprachen & Frameworks:</b><br>C#, .NET (Core / Framework), ASP.NET Core</p>
-
-        <p><b data-i18n="skills.api">API & Schnittstellen:</b><br>REST, OData, ASP.NET Web API</p>
-
-        <p><b data-i18n="skills.cloud">Cloud (Azure):</b><br>Azure Functions, Azure API Management, Azure App Service
-        </p>
-
-        <p><b data-i18n="skills.desktop">Desktop UI:</b><br>Avalonia UI, WPF</p>
-
-        <p><b data-i18n="skills.databases">Datenbanken:</b><br>MS SQL Server, Entity Framework Core</p>
-
-        <p><b data-i18n="skills.tools">Tools & Prinzipien:</b><br>Git, CI/CD, Clean Architecture, SOLID</p>
-
-        <p><b data-i18n="skills.projects">Projekte:</b><br><span data-i18n="home.projects">Alle meine privaten Projekte
-                findet ihr auf GitHub (siehe „Links“).</span></p>
-    </div>
-
-    <button type="button" class="collapsible-header" id="legal" aria-expanded="false" data-i18n="legal.button">📄
-        Rechtliches</button>
-    <div class="collapsible-content">
-        <section class="legal-section">
-            <h3 data-i18n="legal.imprint">Impressum</h3>
-        </section>
-        <section class="legal-section">
-            <h4 data-i18n="legal.imprint.heading">Angaben gemäß § 5 DDG</h4>
-            <address class="legal-contact">
-                Sebastian Walter
-                <br /> Kindergartenstraße 1
-                <br /> 92348 Berg
-                <br /> <span data-i18n="legal.email">E-Mail:</span>
-                sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
-            </address>
+    <main class="home-main">
+        <section class="hero glass-panel" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>
+                    <span data-i18n="home.hero.eyebrow">SOFTWAREENTWICKLUNG</span>
+                </p>
+                <h1 id="hero-title">
+                    <span data-i18n="home.hero.title.first">Gute Lösungen.</span><br>
+                    <span class="accent-text" data-i18n="home.hero.title.second">Sauberer Code.</span>
+                </h1>
+                <p class="hero-description" data-i18n="home.hero.description">
+                    Ich bin Sebastian Walter, leidenschaftlicher Softwareentwickler mit Fokus auf .NET, robuste
+                    Anwendungen und moderne Desktop-Oberflächen.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#coding">
+                        <span data-i18n="home.hero.action">Schwerpunkte entdecken</span>
+                        <span aria-hidden="true">↘</span>
+                    </a>
+                    <a class="text-link" href="links.html#links">
+                        <span data-i18n="links.button">Links</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-art">
+                <div class="logo-frame">
+                    <img src="img/icon-512-maskable.png" alt="Sebastian Walter | evilbaschdi"
+                        data-i18n-alt="brand.alt">
+                </div>
+                <span class="orbit orbit-one" aria-hidden="true"></span>
+                <span class="orbit orbit-two" aria-hidden="true"></span>
+                <span class="art-caption">C# <span>×</span> .NET</span>
+            </div>
+            <span class="hero-index" aria-hidden="true">01</span>
         </section>
 
-        <section class="legal-section">
-            <h4 data-i18n="legal.privacy">Datenschutzerklärung</h4>
-            <p class="legal-copy"><span data-i18n="legal.privacy.first">
-                    Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
-                    (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
-                    Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte
-                    weitergegeben.</span><br><span data-i18n="legal.privacy.second">
-                    Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
-                    gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
-            </p>
-            <p class="legal-copy" data-i18n="legal.privacy.rights">
-                Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten.
-                Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
-            </p>
+        <section class="content-section" id="info" aria-labelledby="info-title">
+            <div class="section-heading">
+                <p class="eyebrow">01 <span class="eyebrow-divider">/</span>
+                    <span data-i18n="section.info">INFO</span>
+                </p>
+                <h2 id="info-title">
+                    <span data-i18n="home.about.heading.first">Neugierig denken.</span><br>
+                    <span class="muted-text" data-i18n="home.about.heading.second">Lösungen gestalten.</span>
+                </h2>
+            </div>
+            <div class="info-copy glass-panel">
+                <p data-i18n="home.about.first">
+                    Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe
+                    für sauberen Code und innovative Lösungen.
+                </p>
+                <p data-i18n="home.about.second">
+                    Ich habe eine Begeisterung dafür entwickelt, komplexen Problemstellungen mit eleganten und
+                    funktionalen Anwendungen zu begegnen.
+                </p>
+                <p data-i18n="home.about.third">
+                    Ich bin spezialisiert auf die Entwicklung von .NET-Anwendungen und habe Erfahrung in der gesamten
+                    Software-Entwicklungspipeline, von der Konzeption bis zur Bereitstellung.
+                </p>
+                <p data-i18n="home.about.fourth">
+                    In meiner Freizeit, wenn ich nicht gerade programmiere, höre und mache ich gerne Musik und
+                    interessiere mich für gutes Essen.
+                </p>
+            </div>
         </section>
-    </div>
-    <br />
 
-    <a href="links.html" class="button" target="_blank" data-i18n="links.button">Links</a>
+        <section class="content-section coding-section" id="coding" aria-labelledby="coding-title">
+            <div class="section-heading">
+                <p class="eyebrow">02 <span class="eyebrow-divider">/</span>
+                    <span data-i18n="section.coding">CODING</span>
+                </p>
+                <h2 id="coding-title">
+                    <span data-i18n="home.coding.heading.first">Fokus auf .NET.</span><br>
+                    <span class="muted-text" data-i18n="home.coding.heading.second">Vom Backend bis zum Desktop.</span>
+                </h2>
+                <p class="section-intro" data-i18n="home.coding">
+                    Als .NET-Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne
+                    Desktop-Anwendungen.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.languages">Sprachen & Frameworks</h3>
+                    <p>C#, .NET (Core / Framework), ASP.NET Core</p>
+                </article>
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.api">API & Schnittstellen</h3>
+                    <p>REST, OData, ASP.NET Web API</p>
+                </article>
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.cloud">Cloud (Azure)</h3>
+                    <p>Azure Functions, Azure API Management, Azure App Service</p>
+                </article>
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.desktop">Desktop UI</h3>
+                    <p>Avalonia UI, WPF</p>
+                </article>
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.databases">Datenbanken</h3>
+                    <p>MS SQL Server, Entity Framework Core</p>
+                </article>
+                <article class="skill-card glass-panel">
+                    <h3 data-i18n="skills.tools">Tools & Prinzipien</h3>
+                    <p>Git, CI/CD, Clean Architecture, SOLID</p>
+                </article>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
+        <section class="projects-panel glass-panel" aria-labelledby="projects-title">
+            <div>
+                <p class="eyebrow">03 <span class="eyebrow-divider">/</span>
+                    <span data-i18n="skills.projects">PROJEKTE</span>
+                </p>
+                <h2 id="projects-title" data-i18n="home.projects.heading">Ideen werden Projekte.</h2>
+            </div>
+            <p data-i18n="home.projects">Alle meine privaten Projekte findet ihr auf GitHub (siehe „Links“).</p>
+            <a class="button button-primary" href="links.html#links">
+                <span data-i18n="links.button">Links</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+            <span class="projects-decoration" aria-hidden="true">SW</span>
+        </section>
+
+        <section class="home-legal legal-disclosure" aria-label="Rechtliches"
+            data-i18n-aria-label="legal.label">
+            <button type="button" class="collapsible-header" id="legal" aria-expanded="false"
+                data-i18n="legal.button">📄 Rechtliches</button>
+            <div class="collapsible-content">
+                <section class="legal-content">
+                    <h2 data-i18n="legal.imprint">Impressum</h2>
+                    <h3 data-i18n="legal.imprint.heading">Angaben gemäß § 5 DDG</h3>
+                    <p class="legal-copy" data-i18n="legal.private">
+                        Dies ist ein privater, nicht-kommerzieller Internetauftritt.
+                    </p>
+                    <address class="legal-contact">
+                        Sebastian Walter<br>
+                        Kindergartenstraße 1<br>
+                        92348 Berg<br>
+                        <span data-i18n="legal.email">E-Mail:</span>
+                        sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
+                    </address>
+                    <h3 data-i18n="legal.privacy">Datenschutzerklärung</h3>
+                    <p><span data-i18n="legal.privacy.first">
+                        Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
+                        (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
+                        Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte
+                        weitergegeben.</span><br>
+                        <span data-i18n="legal.privacy.second">
+                        Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
+                        gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
+                    </p>
+                    <p data-i18n="legal.privacy.rights">
+                        Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten.
+                        Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
+                    </p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <a class="footer-brand" href="#top" aria-label="//sebastian walter | evilbaschdi">
             <span>//sebastian walter</span><span class="footer-brand-divider">|</span><span>evilbaschdi</span>
         </a>
-        <div class="footer-copyright">
-            <p>
-                &copy; 2012 - <span id="year"></span> Sebastian Walter
-            </p>
-        </div>
-        <a class="footer-top" href="#top" data-i18n="footer.top">Nach oben</a>
+        <p>&copy; 2012 - <span id="year"></span> Sebastian Walter</p>
+        <a class="back-to-top" href="#top"><span data-i18n="footer.top">Nach oben</span> ↑</a>
     </footer>
-
 </body>
 
 </html>
