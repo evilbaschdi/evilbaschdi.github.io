@@ -153,6 +153,11 @@ function setLanguage(language) {
     description.content = page.description;
   }
 
+  const openGraphTitle = document.querySelector('meta[property="og:title"]');
+  if (openGraphTitle) {
+    openGraphTitle.content = page.title;
+  }
+
   const openGraphDescription = document.querySelector('meta[property="og:description"]');
   if (openGraphDescription) {
     openGraphDescription.content = page.description;
