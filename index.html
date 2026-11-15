@@ -35,17 +35,29 @@
     <script src="js/site.js" defer></script>
 </head>
 
-<body data-page="home">
+<body id="top" data-page="home">
     <!-- Page Content -->
-    <header class="site-controls">
-        <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria-label="language.label">
-            <button type="button" data-language="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
-            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="//sebastian walter | evilbaschdi">
+            <img src="img/icon-144.png" alt="">
+            <span>//sebastian walter <span class="brand-accent">| evilbaschdi</span></span>
+        </a>
+        <nav class="site-navigation" aria-label="Hauptnavigation" data-i18n-aria-label="nav.label">
+            <a href="#info" data-i18n="nav.info">Info</a>
+            <a href="#coding" data-i18n="nav.coding">Coding</a>
+            <a href="#legal" data-i18n="nav.legal">Rechtliches</a>
+            <a href="links.html#links" data-i18n="nav.links">Links</a>
+        </nav>
+        <div class="header-controls">
+            <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria-label="language.label">
+                <button type="button" data-language="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+                <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="true"
+                aria-label="Dunkles Design" title="Dunkles Design">
+                <span aria-hidden="true">☾</span>
+            </button>
         </div>
-        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="true"
-            aria-label="Dunkles Design" title="Dunkles Design">
-            <span aria-hidden="true">☾</span>
-        </button>
     </header>
     <div class="profile-mark">
         <img src="img/icon-144.png" alt="Sebastian Walter | evilbaschdi" data-i18n-alt="brand.alt"
@@ -53,36 +65,37 @@
     </div>
     <h1>//sebastian walter | evilbaschdi</h1>
 
-    <a data-i18n="section.info">INFO</a>
-    <p data-i18n="home.about.first" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <h2 id="info" class="section-title" data-i18n="section.info">INFO</h2>
+    <p class="home-copy" data-i18n="home.about.first">
         Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe für sauberen
         Code und innovative Lösungen.
     </p>
-    <p data-i18n="home.about.second" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p class="home-copy" data-i18n="home.about.second">
         Ich habe eine Begeisterung dafür entwickelt, komplexen Problemstellungen mit eleganten und funktionalen
         Anwendungen zu begegnen.
     </p>
-    <p data-i18n="home.about.third" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p class="home-copy" data-i18n="home.about.third">
         Ich bin spezialisiert auf die Entwicklung von .NET-Anwendungen und habe Erfahrung in der gesamten
         Software-Entwicklungspipeline, von der Konzeption bis zur Bereitstellung.
     </p>
-    <p data-i18n="home.about.fourth" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <p class="home-copy" data-i18n="home.about.fourth">
         In meiner Freizeit, wenn ich nicht gerade programmiere, höre und mache ich gerne Musik und interessiere mich
         für gutes Essen.
     </p>
 
-    <a id="projects" data-i18n="section.coding">CODING</a>
-    <p data-i18n="home.coding" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+    <h2 id="coding" class="section-title" data-i18n="section.coding">CODING</h2>
+    <p class="home-copy" data-i18n="home.coding">
         Als .NET-Entwickler konzentriere ich mich auf robuste Backend-Lösungen und moderne
         Desktop-Anwendungen.
     </p>
 
-    <div style="max-width: 700px; margin: 20px auto; text-align: left; line-height: 2;">
+    <div class="skills-list">
         <p><b data-i18n="skills.languages">Sprachen & Frameworks:</b><br>C#, .NET (Core / Framework), ASP.NET Core</p>
 
         <p><b data-i18n="skills.api">API & Schnittstellen:</b><br>REST, OData, ASP.NET Web API</p>
 
-        <p><b data-i18n="skills.cloud">Cloud (Azure):</b><br>Azure Functions, Azure API Management, Azure App Service</p>
+        <p><b data-i18n="skills.cloud">Cloud (Azure):</b><br>Azure Functions, Azure API Management, Azure App Service
+        </p>
 
         <p><b data-i18n="skills.desktop">Desktop UI:</b><br>Avalonia UI, WPF</p>
 
@@ -90,41 +103,42 @@
 
         <p><b data-i18n="skills.tools">Tools & Prinzipien:</b><br>Git, CI/CD, Clean Architecture, SOLID</p>
 
-        <p><b data-i18n="skills.projects">Projekte:</b><br><span data-i18n="home.projects">Alle meine privaten Projekte findet ihr auf GitHub (siehe „Links“).</span></p>
+        <p><b data-i18n="skills.projects">Projekte:</b><br><span data-i18n="home.projects">Alle meine privaten Projekte
+                findet ihr auf GitHub (siehe „Links“).</span></p>
     </div>
 
-    <button type="button" class="collapsible-header" id="disclaimer" aria-expanded="false" data-i18n="legal.button">📄 Rechtliches</button>
+    <button type="button" class="collapsible-header" id="legal" aria-expanded="false" data-i18n="legal.button">📄
+        Rechtliches</button>
     <div class="collapsible-content">
-        <div>
+        <section class="legal-section">
             <h3 data-i18n="legal.imprint">Impressum</h3>
-        </div>
-        <div>
-            <h4 data-i18n="legal.imprint.heading">Angaben gemäß § 5 TMG</h4>
-            <p>
+        </section>
+        <section class="legal-section">
+            <h4 data-i18n="legal.imprint.heading">Angaben gemäß § 5 DDG</h4>
+            <address class="legal-contact">
                 Sebastian Walter
                 <br /> Kindergartenstraße 1
                 <br /> 92348 Berg
                 <br /> <span data-i18n="legal.email">E-Mail:</span>
                 sebwalter<!-- >@. -->@<!-- >@. -->g<!-- >@. -->m<!-- >@. -->x.<!-- >@. -->net
-            </p>
-        </div>
+            </address>
+        </section>
 
-        <div>
+        <section class="legal-section">
             <h4 data-i18n="legal.privacy">Datenschutzerklärung</h4>
-        </div>
-        <div>
-            <p style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;"><span data-i18n="legal.privacy.first">
-                Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
-                (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
-                Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte weitergegeben.</span><br><span data-i18n="legal.privacy.second">
-                Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
-                gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
+            <p class="legal-copy"><span data-i18n="legal.privacy.first">
+                    Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten
+                    (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese
+                    Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte
+                    weitergegeben.</span><br><span data-i18n="legal.privacy.second">
+                    Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage
+                    gespeichert. Es erfolgt keine Weitergabe an Dritte.</span>
             </p>
-            <p data-i18n="legal.privacy.rights" style="max-width: 700px; text-align: left; margin: 20px auto; line-height: 1.8;">
+            <p class="legal-copy" data-i18n="legal.privacy.rights">
                 Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten.
                 Bei Fragen wenden Sie sich bitte an die oben genannte E-Mail-Adresse.
             </p>
-        </div>
+        </section>
     </div>
     <br />
 
@@ -132,11 +146,15 @@
 
     <!-- Footer -->
     <footer>
-        <div>
+        <a class="footer-brand" href="#top" aria-label="//sebastian walter | evilbaschdi">
+            <span>//sebastian walter</span><span class="footer-brand-divider">|</span><span>evilbaschdi</span>
+        </a>
+        <div class="footer-copyright">
             <p>
                 &copy; 2012 - <span id="year"></span> Sebastian Walter
             </p>
         </div>
+        <a class="footer-top" href="#top" data-i18n="footer.top">Nach oben</a>
     </footer>
 
 </body>

@@ -18,6 +18,14 @@ const translations = {
     "theme.dark": "Dunkles Design",
     "theme.light": "Helles Design",
     "brand.alt": "Sebastian Walter | evilbaschdi",
+    "nav.label": "Hauptnavigation",
+    "nav.info": "Info",
+    "nav.coding": "Coding",
+    "nav.social": "Social",
+    "nav.development": "Entwicklung",
+    "nav.legal": "Rechtliches",
+    "nav.links": "Links",
+    "footer.top": "Nach oben",
     "section.info": "INFO",
     "section.coding": "CODING",
     "home.about.first": "Mein Name ist Sebastian Walter. Ich bin leidenschaftlicher Softwareentwickler mit einer Vorliebe für sauberen Code und innovative Lösungen.",
@@ -36,10 +44,10 @@ const translations = {
     "links.button": "Links",
     "links.home": "Homepage",
     "links.social": "SOCIAL",
-    "links.development": "DEV",
+    "links.development": "ENTWICKLUNG",
     "legal.button": "📄 Rechtliches",
     "legal.imprint": "Impressum",
-    "legal.imprint.heading": "Angaben gemäß § 5 TMG",
+    "legal.imprint.heading": "Angaben gemäß § 5 DDG",
     "legal.email": "E-Mail:",
     "legal.privacy": "Datenschutzerklärung",
     "legal.privacy.first": "Beim Besuch dieser Webseite werden durch den Provider automatisch technische Daten (z.B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese Daten dienen ausschließlich der technischen Überwachung und werden nicht an Dritte weitergegeben.",
@@ -56,7 +64,7 @@ const translations = {
       },
       links: {
         title: "//sebastian walter | evilbaschdi | Links",
-        description: "My social media profiles and professional links. Get in touch on GitHub, LinkedIn, Mastodon, Bluesky, and more."
+        description: "My social profiles, developer accounts, and professional networks on Bluesky, GitHub, LinkedIn, and more."
       },
       terminal: {
         title: "//sebastian walter | evilbaschdi",
@@ -67,6 +75,14 @@ const translations = {
     "theme.dark": "Dark mode",
     "theme.light": "Light mode",
     "brand.alt": "Sebastian Walter | evilbaschdi",
+    "nav.label": "Main navigation",
+    "nav.info": "About",
+    "nav.coding": "Development",
+    "nav.social": "Social",
+    "nav.development": "Development",
+    "nav.legal": "Legal",
+    "nav.links": "Links",
+    "footer.top": "Back to top",
     "section.info": "ABOUT",
     "section.coding": "DEVELOPMENT",
     "home.about.first": "My name is Sebastian Walter. I am a software developer with a passion for clean code and innovative solutions.",
@@ -88,7 +104,7 @@ const translations = {
     "links.development": "DEVELOPMENT",
     "legal.button": "📄 Legal information",
     "legal.imprint": "Legal notice",
-    "legal.imprint.heading": "Information pursuant to Section 5 TMG",
+    "legal.imprint.heading": "Information pursuant to Section 5 DDG",
     "legal.email": "Email:",
     "legal.privacy": "Privacy policy",
     "legal.privacy.first": "When you visit this website, the hosting provider automatically stores technical data (such as your IP address, browser type, and time of access) in server log files. This data is used solely for technical monitoring and is not shared with third parties.",
@@ -179,6 +195,15 @@ document.querySelectorAll(".collapsible-header").forEach(button => {
     button.setAttribute("aria-expanded", String(!expanded));
     button.classList.toggle("active", !expanded);
     button.nextElementSibling.classList.toggle("active", !expanded);
+  });
+});
+
+document.querySelectorAll('.site-navigation a[href="#legal"]').forEach(link => {
+  link.addEventListener("click", () => {
+    const legalButton = document.getElementById("legal");
+    if (legalButton?.getAttribute("aria-expanded") !== "true") {
+      legalButton.click();
+    }
   });
 });
 

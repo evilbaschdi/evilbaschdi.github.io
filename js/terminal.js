@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   - **Tools & Prinzipien:** Git, CI/CD, Clean Architecture, SOLID`,
                 projekte: `Sämtliche meiner privaten Projekte sind auf <a href="https://github.com/evilbaschdi" target="_blank">GitHub</a> zu finden`,
                 links: `Weitere <a href="https://evilbaschdi.github.io/links" target="_blank">Links</a>.`,
-                impressum: `Angaben gemäß § 5 TMG:
+                impressum: `Angaben gemäß § 5 DDG:
 Sebastian Walter
 Kindergartenstraße 1
 92348 Berg
@@ -38,7 +38,7 @@ E-Mail: sebwalter@gmx.net`
   - **Tools & principles:** Git, CI/CD, Clean Architecture, SOLID`,
                 projects: `All of my personal projects can be found on <a href="https://github.com/evilbaschdi" target="_blank">GitHub</a>.`,
                 links: `More <a href="links.html" target="_blank">links</a>.`,
-                legal: `Information pursuant to Section 5 TMG:
+                legal: `Information pursuant to Section 5 DDG:
 Sebastian Walter
 Kindergartenstraße 1
 92348 Berg
